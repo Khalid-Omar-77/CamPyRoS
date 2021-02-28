@@ -118,9 +118,9 @@ print(f"Simulation run time: {time.time()-t:.2f} s")
 imported_data = pyro.from_json("data/trajectory.json")
 
 """Plot the results"""
-pyro.plot_launch_trajectory_3d(
-    imported_data, martlet4, show_orientation=False
-)  # Could have also used simulation_output instead of imported_data
+#pyro.plot_launch_trajectory_3d(
+ #   imported_data, martlet4, show_orientation=False
+#)  # Could have also used simulation_output instead of imported_data
 pyro.plot_altitude_time(imported_data, martlet4)
 pyro.plot_ypr(imported_data, martlet4)
-# pyro.animate_orientation(imported_data)
+#pyro.animate_orientation(imported_data)

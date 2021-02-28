@@ -24,6 +24,8 @@ import pandas as pd
 from scipy.spatial.transform import Rotation
 from ambiance import Atmosphere
 
+import streamlit as st
+
 __copyright__ = """
 
     Copyright 2021 Jago Strong-Wright & Daniel Gibbons
@@ -130,7 +132,9 @@ def plot_ypr(simulation_output, rocket):
     axs[1, 1].set_xlabel("time/s")
     axs[1, 1].set_ylabel("Altitude /m")
 
-    plt.show()
+    fig.tight_layout()
+
+    st.pyplot(fig)
 
 
 def plot_launch_trajectory_3d(
@@ -225,7 +229,8 @@ def plot_launch_trajectory_3d(
     set_axes_equal_3d(ax)
 
     ax.legend()
-    plt.show()
+    
+    st.pyplot(fig)
 
 
 def plot_altitude_time(simulation_output, rocket):
@@ -299,7 +304,8 @@ def plot_altitude_time(simulation_output, rocket):
     axs[1, 1].set_ylabel("Velocity/m/s")
 
     fig.tight_layout()
-    plt.show()
+    
+    st.pyplot(fig)
 
 
 def plot_aero(simulation_output, rocket):
