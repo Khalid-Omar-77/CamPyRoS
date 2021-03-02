@@ -10,7 +10,6 @@ st.header('Developed by Jago Strong-Wright and Daniel Gibbons')
 
 """Import motor data to use for the mass model"""
 motor_csv = pd.read_csv("novus_sim_6.1/motor_out.csv")
-
 time_array = motor_csv["Time"]
 smass_array = motor_csv["Solid Fuel Mass (kg)"]
 S_DEN = motor_csv["Solid Fuel Density (kg/m^3)"][0]
@@ -90,6 +89,15 @@ parachute = pyro.Parachute(
     main_alt=st.number_input("Main Parachute Deployment Altitude", 1000),
     attach_distance=st.number_input("Distance between Rocket Nose Tip and Parachute Attachment Point", 0),
 )
+"""
+parachute = pyro.Parachute(
+    main_s=13.9,
+    drogue_s=1.13,
+    main_cd=0.78,
+    dro_cd=0.78,
+    main_alt=1000,
+    attach_distance=0,
+)"""
 
 """Create the Rocket object"""
 martlet4 = pyro.Rocket(
