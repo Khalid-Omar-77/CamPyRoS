@@ -590,7 +590,9 @@ def plot_thrust(simulation_output, rocket):
     axs[1, 0].set_ylabel("Mass flow rate (kg/s)")
     axs[1, 0].grid()
 
-    plt.show()
+    fig.tight_layout()
+
+    st.pyplot(fig)
 
 
 def plot_mass(simulation_output, rocket):
